@@ -1,0 +1,51 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Avatar sizes */
+.sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.8rem;
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.lg {
+  width: 56px;
+  height: 56px;
+  font-size: 1.25rem;
+}
+
+/* Specific theme classes */
+.user {
+  background-color: #e0e7ff; /* Indigo-50 */
+  color: #4f46e5; /* Indigo-600 */
+  border-color: #c7d2fe;
+}
+
+.assistant {
+  background-color: #d1fae5; /* Green-100 */
+  color: #065f46; /* Green-800 */
+  border-color: #a7f3d0;
+}

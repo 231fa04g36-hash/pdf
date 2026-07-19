@@ -1,0 +1,191 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg-secondary);
+}
+
+.header {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: left;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.snippetAlert {
+  background-color: rgba(79, 70, 229, 0.05);
+  border: 1px solid rgba(79, 70, 229, 0.1);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.snippetTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+.snippetText {
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.viewerWorkspace {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-md);
+  position: relative;
+}
+
+.canvasWrapper {
+  box-shadow: var(--shadow-md);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  max-width: 100%;
+  position: relative;
+}
+
+.controls {
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageDetails {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.loadingOverlay,
+.errorOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.errorTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-danger);
+}
+
+.errorText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+:global(.highlight) {
+  background-color: rgba(254, 240, 138, 0.4) !important; /* Semi-transparent Yellow-200 */
+  color: transparent !important; /* Prevent ghosting double-text */
+  border-radius: 2px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Custom Text Layer positioning overrides to guarantee visibility on top of the canvas */
+:global(.react-pdf__Page) {
+  position: relative !important;
+}
+
+:global(.react-pdf__Page__canvas) {
+  display: block !important;
+  user-select: none !important;
+}
+
+:global(.react-pdf__Page__textContent) {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  overflow: hidden !important;
+  line-height: 1.0 !important;
+  opacity: 1.0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Allow text selection inside the text layer */
+:global(.react-pdf__Page__textContent) * {
+  pointer-events: auto !important;
+}
+
+:global(.react-pdf__Page__textContent) > span {
+  color: transparent !important;
+  position: absolute !important;
+  white-space: pre !important;
+  cursor: text !important;
+  transform-origin: 0% 0% !important;
+}
+
+/* Style our highlights inside the text layer */
+:global(.react-pdf__Page__textContent) mark {
+  background-color: rgba(254, 240, 138, 0.4) !important; /* Semi-transparent Yellow-200 */
+  color: transparent !important; /* Prevent ghosting double-text */
+  border-radius: 2px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.skeletonContainer {
+  width: 380px;
+  height: 537px;
+  max-width: 100%;
+  display: flex;
+}

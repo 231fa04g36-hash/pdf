@@ -1,0 +1,206 @@
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.dropzone {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible {
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+.dragActive {
+  border-color: var(--color-primary);
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.icon {
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.dropzone:hover .icon {
+  color: var(--color-primary);
+}
+
+.text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.subtext {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Uploading State */
+.box {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: left;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.progressBarContainer {
+  height: 8px;
+  background-color: var(--color-bg-secondary);
+  border-radius: 9999px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width 0.1s linear;
+  border-radius: 9999px;
+}
+
+.progressDetails {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Success State */
+.successCard {
+  border-color: var(--color-success);
+}
+
+.successIcon {
+  color: var(--color-success);
+  font-size: 2rem;
+}
+
+.successTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-success);
+  margin-bottom: var(--space-xs);
+}
+
+.docInfo {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: left;
+}
+
+.ocrNote {
+  background-color: #fef3c7; /* Amber-100 */
+  border: 1px solid #fcd34d; /* Amber-300 */
+  color: #92400e; /* Amber-800 */
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  text-align: left;
+}
+
+.ocrIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Error State */
+.errorCard {
+  border-color: var(--color-danger);
+}
+
+.errorIcon {
+  color: var(--color-danger);
+}
+
+.errorTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-danger);
+  margin-bottom: var(--space-xs);
+}
+
+/* Dev tool */
+.devTools {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  background-color: var(--color-bg-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: left;
+}
+
+.devSelect {
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  outline: none;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+  .dropzone {
+    padding: var(--space-lg) var(--space-sm);
+  }
+}
+
+.processingWrapper {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.processingSkeleton {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  width: 100%;
+  background-color: var(--color-bg-secondary);
+  box-sizing: border-box;
+}
+

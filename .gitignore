@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+env/
+
+# Build outputs
+dist/
+build/
+out/
+
+# Environment configurations
+.env
+.env.*
+!.env.example
+
+# Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases
+*.db
+chroma_db/
+vector_store/
+
+# OS and Editor configurations
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs and user uploads
+*.log
+backend/uploads/
+
+# Secrets
+firebase-key.json
+backend/firebase-key.json
+
+

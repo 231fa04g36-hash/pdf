@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.toast
+
+# Environment variables
+.env
+
+# Database / Vector database
+chroma_db/
+local_db.db
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and uploads
+*.log
+uploads/
+
+# Secrets
+firebase-key.json
+
+

@@ -1,0 +1,77 @@
+[
+  {
+    "question": "Who launched Antigravity Cloud?",
+    "expected_answer": "A team of former Google systems engineers.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "When was Antigravity Cloud officially launched?",
+    "expected_answer": "October 2025.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "What does Antigravity Cloud provide for query latency?",
+    "expected_answer": "Sub-millisecond query latency.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "What is the primary interface of Antigravity Cloud?",
+    "expected_answer": "A REST API supporting JSON payloads.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "How many pricing tiers does Antigravity Cloud offer?",
+    "expected_answer": "Three tiers: Free Tier, Developer Tier, and Enterprise Tier.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "How much does the Developer Tier cost?",
+    "expected_answer": "$29 per month.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "How many queries are supported in the Free Tier?",
+    "expected_answer": "Up to 10,000 read operations per month.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "How much storage is provided in the Enterprise Tier?",
+    "expected_answer": "1 TB of storage.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "Does the Free Tier support dedicated support engineers?",
+    "expected_answer": "No, dedicated support is only included in the Enterprise Tier.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "What encryption protocol is used in transit?",
+    "expected_answer": "TLS 1.3 encryption.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "What algorithm is used for encryption at rest?",
+    "expected_answer": "AES-256.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "How is user authentication handled?",
+    "expected_answer": "Via integration with Firebase Admin SDK.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "Name the three cloud regions where Antigravity Cloud is deployed.",
+    "expected_answer": "us-east-1 (N. Virginia), eu-west-1 (Ireland), and ap-southeast-1 (Singapore).",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "What is the maximum replication lag for multi-region replication?",
+    "expected_answer": "150 milliseconds.",
+    "source_pdf": "eval_sample.pdf"
+  },
+  {
+    "question": "Is horizontal scaling handled manually or automatically?",
+    "expected_answer": "Automatically.",
+    "source_pdf": "eval_sample.pdf"
+  }
+]

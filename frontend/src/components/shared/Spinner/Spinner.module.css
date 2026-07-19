@@ -1,0 +1,33 @@
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  border-top-color: currentColor; /* Inherit color from parent (e.g., button text color) */
+  animation: spin 0.8s linear infinite;
+  box-sizing: border-box;
+}
+
+/* Spinner sizes */
+.sm {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+}
+
+.md {
+  width: 24px;
+  height: 24px;
+  border-width: 2.5px;
+}
+
+.lg {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

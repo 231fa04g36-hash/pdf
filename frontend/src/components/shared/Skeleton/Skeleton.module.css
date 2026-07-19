@@ -1,0 +1,93 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-border) 50%,
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.text {
+  height: 16px;
+  width: 100%;
+  margin-bottom: var(--space-sm);
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.textLastLine {
+  width: 60%;
+}
+
+@keyframes loadingShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.documentPage {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.documentHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.documentTitle {
+  height: 24px;
+  width: 50%;
+  margin-bottom: var(--space-xs);
+}
+
+.documentSubtitle {
+  height: 16px;
+  width: 75%;
+}
+
+.documentBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.documentLine {
+  height: 14px;
+  width: 100%;
+}
+
+.documentLine:nth-child(2) {
+  width: 95%;
+}
+
+.documentLine:nth-child(4) {
+  width: 98%;
+}
+
+.documentLine:last-child {
+  width: 70%;
+}
