@@ -45,8 +45,9 @@ class OllamaProvider:
         if gpu_available:
             options["num_gpu"] = 35  # Load layers onto GPU
         else:
-            num_threads = os.cpu_count() or 4
-            options["num_thread"] = num_threads
+            # Let Ollama automatically determine the optimal thread count for CPU execution
+            # to prevent thread scheduling overhead across mixed P/E core architectures.
+            pass
 
         # OLD: payload without keep_alive parameter, kept for reference
         # payload = {

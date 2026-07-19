@@ -456,12 +456,15 @@ class ChatService:
         candidates = sorted(all_candidates_map.values(), key=lambda x: x.get("fused_score", 0.0), reverse=True)
         retrieval_duration_ms = (time.perf_counter() - start_retrieval) * 1000.0
 
+        # Optimization: Slice candidates to top 15 before reranking to keep CrossEncoder fast on CPU
+        rerank_candidates = candidates[:15]
+
         # 3. Rerank stage timing
         start_rerank = time.perf_counter()
         from app.services.reranker_service import reranker_service
         similar_chunks = reranker_service.rerank_chunks(
             question=retrieval_question,
-            candidate_chunks=candidates,
+            candidate_chunks=rerank_candidates,
             top_n=settings.FINAL_TOP_N
         )
         rerank_duration_ms = (time.perf_counter() - start_rerank) * 1000.0
@@ -772,8 +775,9 @@ class ChatService:
                 # )
                 system_prompt = (
                     "You are a precise document analyst. Be concise, objective, and truthful.\n"
-                    "Answer ONLY using information found inside the <context> tags above.\n"
-                    "If the answer is not present in the context, respond exactly with: "
+                    "Answer the user's question using the information inside the <context> tags above.\n"
+                    "You may make basic common-sense connections (for example, recognizing that 'AES-256' is an algorithm/method used for encryption at rest, or that a tier doesn't include a feature if it's explicitly only listed in a different tier).\n"
+                    "If the answer is not present or cannot be reasonably inferred from the context, respond exactly with: "
                     "'I could not find this information in the document'\n"
                     "Always cite the page number(s) you used, in the format (Page X), "
                     "referencing the page attribute from the chunk(s) you drew from."
